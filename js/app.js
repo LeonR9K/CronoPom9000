@@ -10,11 +10,12 @@ let detenido = false;
 let pomodoro;
 let crono;
 
-let botonStart;
-let botonStop;
+let botonStart = document.querySelector('.boton-start');
+let botonStop = document.querySelector('.boton-stop');
+let botonReset = document.querySelector('.boton-reset');
 
 let intervalos = 1500000;
-let tiempoDescanso = 300;
+let tiempoDescanso = 300000;
 
 //VARIABLES-SELECTORES
 const textoSegundos = document.querySelector('.segundos .numeros h2');
@@ -28,13 +29,18 @@ cargarEventListeners();
 //FUNCIONES
 function cargarEventListeners() {
     botones.addEventListener('click', timer);
+    document.addEventListener('DOMContentLoaded', () => {
+        botonReset.style.cssText = 'pointer-events:none;text-decoration: line-through;';
+        botonStop.style.cssText = 'pointer-events:none;text-decoration:line-through;';
+    })
 }
 
 function timer(e) {
 
     if (e.target.classList.contains('boton-start')) {
-        botonStart = e.target;
+        // botonStart = e.target;
         botonStart.style.cssText = 'pointer-events:none;text-decoration: line-through;';
+        botonReset.style.cssText = 'pointer-events:none;text-decoration: line-through;';
 
 
 
@@ -44,6 +50,7 @@ function timer(e) {
         }
 
         cronometro();
+        console.log('hola')
 
         function cronometro() {
             crono = setInterval(() => {
@@ -123,8 +130,9 @@ function timer(e) {
 
     if (e.target.classList.contains('boton-stop')) {
 
-        botonStop = e.target;
+
         botonStop.style.cssText = 'pointer-events:none;text-decoration: line-through;';
+        botonReset.style.cssText = 'pointer-events:auto;text-decoration:none;';
 
         if (botonStart != null) {
             botonStart.style.cssText = 'pointer-events:auto;text-decoration: none;';
@@ -136,13 +144,13 @@ function timer(e) {
 
     if (e.target.classList.contains('boton-reset')) {
 
-        detenido = true;
+        detenido = false;
+        botonReset.style.cssText = 'pointer-events:none; text-decoration: line-through;';
         if (botonStart != null) {
             botonStart.style.cssText = 'pointer-events:auto;text-decoration: none;';
         }
         if (botonStop != null) {
             botonStop.style.cssText = 'pointer-events:none;text-decoration: line-through;';
-
         }
         sec = 0;
         textoSegundos.textContent = `0${sec}`;

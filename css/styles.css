@@ -1,5 +1,9 @@
 :root {
     --grisPrimario: #545454;
+    --bg: #1e2345;
+    --violet: rgb(161, 132, 240);
+    --pink: #d60087;
+    --turquoise: #2fdabd;
 }
 
 html {
@@ -17,6 +21,7 @@ body {
     height: 100vh;
     font-family: 'Montserrat';
     background: linear-gradient(45deg, #1870ed 0, #f18f88 100%);
+
 }
 
 main {
@@ -31,22 +36,41 @@ main {
 .contenedor {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
-    margin-top: 4rem;
-    background-color: black;
-    width: 20rem;
-    height: 60rem;
+    margin-top: 1rem;
+
+    background: linear-gradient(100deg, var(--violet) 25%, var(--turquoise) 50%,
+            var(--violet) 75%);
+    background-repeat: repeat;
+    border-radius: 2rem;
+    animation: gradient 5s linear infinite;
+
+    width: 30rem;
+    height: 45rem;
     margin-left: 2rem;
     margin-right: 2rem;
     padding: 1rem;
     border-radius: 7px;
 }
 
+@keyframes gradient {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: -80rem 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
 
 
 @media (min-width: 768px) {
     .contenedor {
         width: 60rem;
-        height: 17rem;
+        height: 18rem;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(1, 1fr);
 
@@ -94,8 +118,14 @@ main {
     grid-column: 2/3;
     justify-content: center;
     color: white;
-    font-size: 4.2rem;
+    font-size: 3.5rem;
 
+}
+
+@media (min-width: 768px) {
+    .numeros h2 {
+        font-size: 4.2rem;
+    }
 }
 
 .numeros p {
@@ -119,8 +149,13 @@ main {
     justify-content: center;
     line-height: 0;
     color: var(--grisPrimario);
-    font-size: 1.5rem;
+    font-size: 1rem;
+}
 
+@media (min-width: 768px) {
+    .letras {
+        font-size: 1.5rem;
+    }
 }
 
 .contenedor-botones {
@@ -132,7 +167,7 @@ main {
     margin-top: 1rem;
     margin-bottom: 1rem;
     background-color: black;
-    width: 20rem;
+    width: 30rem;
     height: 20rem;
 
 }
@@ -172,6 +207,11 @@ main {
 .boton:hover {
     color: white;
     background-color: #161616;
+}
+
+.icono-engrane {
+    font-size: 3rem;
+    cursor: pointer;
 }
 
 /* .boton-start {}
