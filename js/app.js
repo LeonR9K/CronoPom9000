@@ -14,6 +14,15 @@ let botonStart = document.querySelector('.boton-start');
 let botonStop = document.querySelector('.boton-stop');
 let botonReset = document.querySelector('.boton-reset');
 
+// Modal variables
+
+const contenedorModal = document.querySelector('.contenedor-modal');
+const modal = document.querySelector('.modal');
+const btnCerrar = document.querySelector('.btn-close')
+const btnAbrir = document.querySelector('.boton-engrane');
+
+//////////////////////
+
 let intervalos = 1500000;
 let tiempoDescanso = 300000;
 
@@ -32,6 +41,21 @@ function cargarEventListeners() {
     document.addEventListener('DOMContentLoaded', () => {
         botonReset.style.cssText = 'pointer-events:none;text-decoration: line-through;';
         botonStop.style.cssText = 'pointer-events:none;text-decoration:line-through;';
+    });
+
+    btnAbrir.addEventListener('click', () => {
+        contenedorModal.style.opacity = '1';
+        contenedorModal.style.visibility = 'visible'
+        modal.classList.toggle('modal-close');
+    });
+
+    btnCerrar.addEventListener('click', () => {
+        modal.classList.toggle('modal-close');
+
+        setTimeout(() => {
+            contenedorModal.style.opacity = '1';
+            contenedorModal.style.visibility = 'hidden';
+        }, 700);
     })
 }
 

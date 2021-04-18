@@ -57,16 +57,69 @@
         </div>
 
         <div class="contenedor-boton-modal">
-            <a class="icono-engrane"><i class="fas fa-cog"></i></a>
+            <a class="boton-engrane"><i class="fas fa-cog"></i></a>
         </div>
     </main>
 
     <div class="contenedor-modal">
-        <div class="modal">
-            <h1>Holaaaaaaa</h1>
+        <div class="modal modal-close">
+            <div class="titulo-modal">
+                <h2>Configuracion</h2>
+                <a class="btn-close" href="#">X</a>
+            </div>
+
+            <h3>Tiempo (minutos)</h3>
+
+
+            <div class="contenedor-tiempos">
+                <div class="tiempo-pomodoro tiempo-seccion">
+                    <label class="tiempo-titulo" for="">Pomodoro</label>
+                    <div class="input-tiempo">
+                        <a class="iconos-flecha" href="#">
+                            <ion-icon name="caret-back-outline"></ion-icon>
+                        </a>
+                        <p>9</p>
+                        <a class="iconos-flecha" href="#">
+                            <ion-icon name="caret-forward-outline"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tiempo-corto tiempo-seccion">
+                    <label class="tiempo-titulo" for="">Short Break</label>
+                    <div class="input-tiempo">
+                        <a class="iconos-flecha" href="#">
+                            <ion-icon name="caret-back-outline"></ion-icon>
+                        </a>
+                        <p>9</p>
+                        <a class="iconos-flecha" href="#">
+                            <ion-icon name="caret-forward-outline"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tiempo-largo tiempo-seccion">
+                    <label class="tiempo-titulo" for="">Long Break</label>
+                    <div class="input-tiempo">
+                        <a class="iconos-flecha" href="#">
+                            <ion-icon name="caret-back-outline"></ion-icon>
+                        </a>
+                        <p>9</p>
+                        <a class="iconos-flecha" href="#">
+                            <ion-icon name="caret-forward-outline"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contenedor-botones-config">
+                <a class="btn-apply">Apply</a>
+            </div>
+
         </div>
     </div>
 
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="js/app.js"></script>
 </body>
 
